@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class Util {
     // реализуйте настройку соеденения с БД
-    private static final String url = "jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&serverTimezone=UTC";
+    private static final String url = "jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
     private static final String username = "root";
     private static final String password = "100799";
 
