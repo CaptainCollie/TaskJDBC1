@@ -2,15 +2,13 @@ package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserServiceImpl;
+import jm.task.core.jdbc.util.Hibernate;
 import jm.task.core.jdbc.util.Util;
 
 import java.sql.Connection;
 
 public class Main {
     public static void main(String[] args) {
-        // реализуйте алгоритм здесь
-        Util util = new Util();
-        Connection connection = util.connect();
         UserServiceImpl userService = new UserServiceImpl();
         userService.createUsersTable();
         userService.saveUser("Vasya", "Ivanov", (byte) 30);
@@ -26,5 +24,6 @@ public class Main {
         }
         userService.cleanUsersTable();
         userService.dropUsersTable();
+
     }
 }

@@ -1,21 +1,25 @@
 package jm.task.core.jdbc.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
 
-@Table
+import javax.persistence.*;
+
+@Entity
+@Table(name = "user")
 public class User {
     @Id
+    @GenericGenerator(name="kaugen" , strategy="increment")
+    @GeneratedValue(generator="kaugen")
+    @Column(nullable = false)
     private Long id;
 
-    @Column
+    @Column(nullable = false, length = 30)
     private String name;
 
-    @Column
+    @Column(nullable = false, length = 30)
     private String lastName;
 
-    @Column
+    @Column(nullable = false)
     private Byte age;
 
     public User() {
